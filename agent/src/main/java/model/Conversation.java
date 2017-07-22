@@ -6,24 +6,33 @@ import java.util.List;
 /**
  * Created by phiha on 22/07/2017.
  */
-public class Conservation {
+public class Conversation {
     private int id;
     private List<Message> messages;
     private User user;
     private long startTime;
     private long endTime;
+    private Status status;
 
-    public Conservation() {
+    public Conversation() {
         messages = new ArrayList();
     }
 
-    public Conservation(int id, List<Message> messages, User user, long startTime, long endTime) {
+    public Conversation(int id, List<Message> messages, User user, long startTime, long endTime) {
 
         this.id = id;
         this.messages = messages;
         this.user = user;
         this.startTime = startTime;
         this.endTime = endTime;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public int getId() {

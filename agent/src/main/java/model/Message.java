@@ -6,12 +6,12 @@ package model;
 public class Message {
     private int id;
     private long time;
-    private String content;
+    private User user;
 
-    public Message(int id, long time, String content) {
+    public Message(int id, long time, User user) {
         this.id = id;
         this.time = time;
-        this.content = content;
+        this.user = user;
     }
 
     public int getId() {
@@ -30,11 +30,11 @@ public class Message {
         this.time = time;
     }
 
-    public String getContent() {
-        return content;
+    public User getUser() {
+        return user;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
