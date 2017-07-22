@@ -74,4 +74,9 @@ public class Conversation {
     public void setEndTime(long endTime) {
         this.endTime = endTime;
     }
+
+    public Message getLastMessageFromUser() {
+        //TODO: implement your code here
+        return null;
+    }
 }

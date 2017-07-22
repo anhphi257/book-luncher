@@ -8,5 +8,5 @@ import model.Message;
  */
 public interface Agent {
     public void receive(Message message);
-    public void send(Conversation conversation);
+    public void send(Conversation conversation, Message message);
 }
