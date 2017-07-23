@@ -1,9 +1,10 @@
 package agent.imp;
 
 import agent.Agent;
-import agent.model.Conversation;
-import agent.model.Message;
-import agent.model.Status;
+import agent.io.AgentIO;
+import common.model.Conversation;
+import common.model.Message;
+import common.model.ConversationStatus;
 import brain.executor.Executor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,8 +31,9 @@ public class BotAgent implements Agent {
         Message responseMessage = executor.execute(conversation);
         try {
             //TODO: implement method for sending message
+            boolean sendSuccess = AgentIO.sendMessage(conversation, responseMessage);
             conversation.addMessage(responseMessage);
-            conversation.setStatus(Status.CONTINUE);
+            conversation.setStatus(ConversationStatus.CONTINUE);
             LOG.info("Sent successfully to user {}, content: {} ",
                     conversation.getUser().getId(), responseMessage.getContent());
         } catch (Exception e) {
@@ -39,11 +41,11 @@ public class BotAgent implements Agent {
                 //TODO: implement method for sending message
                 LOG.error("Failed! Retry again");
                 conversation.addMessage(responseMessage);
-                conversation.setStatus(Status.CONTINUE);
+                conversation.setStatus(ConversationStatus.CONTINUE);
                 LOG.info("Sent successfully to user {}, content: {} ",
                         conversation.getUser().getId(), responseMessage.getContent());
             } catch (Exception e1) {
-                conversation.setStatus(Status.END);
+                conversation.setStatus(ConversationStatus.END);
                 conversation.close();
             }
         }

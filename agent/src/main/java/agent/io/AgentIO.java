@@ -1,15 +1,16 @@
 package agent.io;
 
-import agent.model.Conversation;
-import agent.model.Message;
+import common.model.Conversation;
+import common.model.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AgentIO {
     private static Logger LOG = LoggerFactory.getLogger(AgentIO.class);
 
-    public static void sendMessage(Conversation conversation, Message message) {
+    public static boolean sendMessage(Conversation conversation, Message message) {
         //TODO: implement your code here
+        return false;
     }
 
     public static Message getMessage() {

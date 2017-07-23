@@ -1,4 +1,4 @@
-package agent.model;
+package common.model;
 
 /**
  * Created by phiha on 21/07/2017.
@@ -9,8 +9,8 @@ public class Message {
     private String content;
     private User user;
 
-    public Message(String content) {
-        this.content = content;
+
+    public Message() {
     }
 
     public Message(int id, long time, User user) {
@@ -41,6 +41,10 @@ public class Message {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getContent() {

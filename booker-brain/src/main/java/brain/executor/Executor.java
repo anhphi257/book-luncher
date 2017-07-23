@@ -1,8 +1,8 @@
 package brain.executor;
 
 
-import agent.model.Conversation;
-import agent.model.Message;
+import common.model.Conversation;
+import common.model.Message;
 
 /**
  * Created by phiha on 22/07/2017.

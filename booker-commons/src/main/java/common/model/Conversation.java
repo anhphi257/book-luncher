@@ -1,4 +1,4 @@
-package agent.model;
+package common.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Conversation {
     private User user;
     private long startTime;
     private long endTime;
-    private Status status;
+    private ConversationStatus status;
 
     public Conversation() {
         messages = new ArrayList();
@@ -27,11 +27,11 @@ public class Conversation {
         this.endTime = endTime;
     }
 
-    public Status getStatus() {
+    public ConversationStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(ConversationStatus status) {
         this.status = status;
     }
 

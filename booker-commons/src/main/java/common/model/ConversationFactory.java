@@ -1,7 +1,4 @@
-package agent.model;
-
-import agent.model.Conversation;
-import agent.model.Message;
+package common.model;
 
 /**
  * Created by phiha on 22/07/2017.

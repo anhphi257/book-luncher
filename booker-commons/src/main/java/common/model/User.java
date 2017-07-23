@@ -1,22 +1,26 @@
-package agent.model;
+package common.model;
 
 /**
  * Created by phiha on 21/07/2017.
  */
 public class User {
-    private String id;
+    private int id;
     private String name;
 
-    public User(String id, String name) {
+    public static User rootUser() {
+        return new User(1, "VTCC");
+    }
+
+    public User(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
