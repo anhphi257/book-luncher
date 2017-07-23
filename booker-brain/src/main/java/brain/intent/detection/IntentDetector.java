@@ -1,7 +1,7 @@
-package intent.detection;
+package brain.intent.detection;
 
-import intent.model.Intent;
-import model.Message;
+import brain.intent.model.Intent;
+import agent.model.Message;
 
 /**
  * Created by phiha on 22/07/2017.

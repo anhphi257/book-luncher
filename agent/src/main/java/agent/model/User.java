@@ -1,4 +1,4 @@
-package model;
+package agent.model;
 
 /**
  * Created by phiha on 21/07/2017.

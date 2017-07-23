@@ -1,4 +1,4 @@
-package model;
+package agent.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,5 +78,14 @@ public class Conversation {
     public Message getLastMessageFromUser() {
         //TODO: implement your code here
         return null;
+    }
+
+    public void addMessage(Message message) {
+        messages.add(message);
+    }
+
+    public void close() {
+        setEndTime(System.currentTimeMillis());
+        //TODO: update conversation to database
     }
 }
