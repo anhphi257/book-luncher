@@ -30,13 +30,7 @@ public class MessageProvider {
 
     //TODO: implement your code here
     private static Message doDisagree(Conversation conversation) {
-        Message message = new Message();
-        String fake_date = "01/08/2017";
-        message.setContent(String.format("Xác nhận đ/c %s đặt cơm hôm nay %s? (Có/không)",
-                conversation.getUser().getName(), fake_date));
-        message.setUser(User.rootUser());
-        message.setTime(System.currentTimeMillis());
-        return message;
+        return null;
     }
 
     private static Message doAgree(Conversation conversation) {
@@ -57,7 +51,13 @@ public class MessageProvider {
 
     //Make message to ask user confirm registation
     private static Message doRegister(Conversation conversation) {
-        return null;
+        Message message = new Message();
+        String fake_date = "01/08/2017";
+        message.setContent(String.format("Xác nhận đ/c %s đặt cơm hôm nay %s? (Có/không)",
+                conversation.getUser().getName(), fake_date));
+        message.setUser(User.rootUser());
+        message.setTime(System.currentTimeMillis());
+        return message;
     }
 
     //Make message to ask user

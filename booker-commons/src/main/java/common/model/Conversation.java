@@ -15,6 +15,7 @@ public class Conversation {
     private ConversationStatus status;
 
     public Conversation() {
+        status = ConversationStatus.START;
         messages = new ArrayList();
     }
 
@@ -77,6 +78,11 @@ public class Conversation {
 
     public Message getLastMessageFromUser() {
         //TODO: implement your code here
+        for(int i = messages.size() - 1; i >= 0; i--) {
+            if(messages.get(i).getUser().getId() != 1) {
+                return messages.get(i);
+            }
+        }
         return null;
     }
 

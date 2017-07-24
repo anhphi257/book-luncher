@@ -14,6 +14,7 @@ public class BotExecutor implements Executor {
     public Message execute(Conversation conversation) {
         Message message = conversation.getLastMessageFromUser();
         UserIntent intent = RuleBasedIntentDetector.getInstace().detect(message);
+        System.out.println("INTENT: " + intent);
         return MessageProvider.getMessage(intent, conversation);
     }
 

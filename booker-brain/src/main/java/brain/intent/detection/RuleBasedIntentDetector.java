@@ -22,7 +22,9 @@ public class RuleBasedIntentDetector implements IntentDetector {
     }
 
     public UserIntent detect(Message message) {
+
         String content = message.getContent();
+        System.out.println(content);
         content = content.toLowerCase();
         if(content.contains("hi") || content.contains("hello") || content.contains("chào")) {
             return UserIntent.GREETING;

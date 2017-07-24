@@ -29,6 +29,7 @@ public class BotAgent implements Agent {
 
     public void send() {
         Message responseMessage = executor.execute(conversation);
+        System.out.println("Respone: " + responseMessage.getContent());
         try {
             //TODO: implement method for sending message
             boolean sendSuccess = AgentIO.sendMessage(conversation, responseMessage);

@@ -13,10 +13,11 @@ public class Message {
     public Message() {
     }
 
-    public Message(int id, long time, User user) {
+    public Message(int id, long time, User user, String content) {
         this.id = id;
         this.time = time;
         this.user = user;
+        this.content = content;
     }
 
     public int getId() {
