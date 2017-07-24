@@ -10,6 +10,8 @@ public class AgentIO {
 
     public static boolean sendMessage(Conversation conversation, Message message) {
         //TODO: implement your code here
+        //update db
+        //send Message
         return false;
     }
 

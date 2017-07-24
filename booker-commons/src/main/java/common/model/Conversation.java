@@ -12,10 +12,10 @@ public class Conversation {
     private User user;
     private long startTime;
     private long endTime;
-    private ConversationStatus status;
+    private ConversationState state;
 
     public Conversation() {
-        status = ConversationStatus.START;
+        state = ConversationState.START;
         messages = new ArrayList();
     }
 
@@ -28,12 +28,12 @@ public class Conversation {
         this.endTime = endTime;
     }
 
-    public ConversationStatus getStatus() {
-        return status;
+    public ConversationState getState() {
+        return state;
     }
 
-    public void setStatus(ConversationStatus status) {
-        this.status = status;
+    public void setState(ConversationState state) {
+        this.state = state;
     }
 
     public int getId() {

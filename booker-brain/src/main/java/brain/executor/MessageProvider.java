@@ -42,6 +42,9 @@ public class MessageProvider {
     }
 
     private static Message doCheck(Conversation conversation) {
+        Message message = new Message();
+        String fake_date = "01/08/2017";
+        String content = String.format("");
         return null;
     }
 
@@ -53,7 +56,7 @@ public class MessageProvider {
     private static Message doRegister(Conversation conversation) {
         Message message = new Message();
         String fake_date = "01/08/2017";
-        message.setContent(String.format("Xác nhận đ/c %s đặt cơm hôm nay %s? (Có/không)",
+        message.setContent(String.format("Xác nhận đ/c %s đặt cơm hôm nay, ngày %s? (Có/không)",
                 conversation.getUser().getName(), fake_date));
         message.setUser(User.rootUser());
         message.setTime(System.currentTimeMillis());

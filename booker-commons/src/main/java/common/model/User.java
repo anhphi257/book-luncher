@@ -5,6 +5,8 @@ package common.model;
  */
 public class User {
     private int id;
+    private String fbID;
+    private String username;
     private String name;
 
     public static User rootUser() {
@@ -16,12 +18,31 @@ public class User {
         this.name = name;
     }
 
+    public User() {
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFbID() {
+        return fbID;
+    }
+
+    public void setFbID(String fbID) {
+        this.fbID = fbID;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getName() {
