@@ -1,7 +1,7 @@
 package agent.imp;
 
 import agent.Agent;
-import agent.io.AgentIO;
+import agent.io.utils.AgentIO;
 import brain.executor.Executor;
 import common.model.Conversation;
 import common.model.Message;

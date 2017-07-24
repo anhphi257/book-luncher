@@ -4,7 +4,7 @@ package common.model;
  * Created by phiha on 21/07/2017.
  */
 public class User {
-    private int id;
+    private long id;
     private String fbID;
     private String username;
     private String name;
@@ -21,11 +21,11 @@ public class User {
     public User() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -1,4 +1,4 @@
-package agent.io;
+package agent.io.utils;
 
 import common.model.Conversation;
 import common.model.Message;

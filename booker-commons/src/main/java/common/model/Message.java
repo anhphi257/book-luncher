@@ -12,7 +12,11 @@ public class Message {
 
     public Message() {
     }
-
+    public Message(long time, User user, String content) {
+        this.time = time;
+        this.user = user;
+        this.content = content;
+    }
     public Message(int id, long time, User user, String content) {
         this.id = id;
         this.time = time;

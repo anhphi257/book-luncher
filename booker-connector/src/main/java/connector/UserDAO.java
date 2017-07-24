@@ -22,7 +22,7 @@ public class UserDAO extends AbstractDAO{
         ResultSet rs = statement.executeQuery(sql);
         if(rs.next()) {
             User user = new User();
-            user.setId(rs.getInt("id"));
+            user.setId(rs.getLong("id"));
             user.setFbID(rs.getString("fb_id"));
             user.setName(rs.getString("name"));
             user.setUsername(rs.getString("username"));
@@ -31,13 +31,13 @@ public class UserDAO extends AbstractDAO{
         return null;
     }
 
-    public User getUserByFbId(int fbId) throws SQLException {
+    public User getUserByFbId(long fbId) throws SQLException {
         String sql  = String.format("SELECT * FROM users WHERE users.username = %d", fbId);
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery(sql);
         if(rs.next()) {
             User user = new User();
-            user.setId(rs.getInt("id"));
+            user.setId(rs.getLong("id"));
             user.setFbID(rs.getString("fb_id"));
             user.setName(rs.getString("name"));
             user.setUsername(rs.getString("username"));
