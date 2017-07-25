@@ -16,7 +16,7 @@ public class AppHandler implements Handler<RoutingContext> {
         HttpServerRequest request = routingContext.request();
         HttpServerResponse response = routingContext.response();
 
-        String myToken = "";
+        String myToken = "123456a@";
         String verifyToken = request.getParam("hub.verify_token");
         if (verifyToken.equals(myToken)) {
             String challenge = request.getParam("hub.challenge");

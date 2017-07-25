@@ -83,7 +83,7 @@ public class WebHookHandler implements Handler<RoutingContext> {
     public static class Sender {
         public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         public static String send(String json) {
-            String ACCESS_TOKEN = "";
+            String ACCESS_TOKEN = "EAAMQeZBCD8ZC0BAIvdGBQgzHYZCDjJsL6cqqDsoTkpBGLeAKg9ZCUU8T2QGCYUPxdkTZCgtqkOjrpA60t3I7xnjA0xmXBp6b4IZAAJSGpPNFiNKg7x8CFUb8uCnyY1bXIP0rOlxXTRB7N8qwyA55zkCki03RPF2GSevIu8et0ePQZDZD";
             String url = " https://graph.facebook.com/v2.6/me/messages?access_token=" + ACCESS_TOKEN;
             OkHttpClient client = new OkHttpClient();
             RequestBody body = RequestBody.create(JSON, json);

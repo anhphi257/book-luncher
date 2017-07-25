@@ -4,7 +4,7 @@ import io.vertx.core.http.HttpServerResponse;
 
 public class ResponseProvider {
     public static void sendSuccessRespone(HttpServerResponse response, String message) {
-        response.putHeader("content-type", "application/text");
+        response.putHeader("content-type", "application/json");
         response.putHeader("Access-Control-Allow-Origin", "*");
         response.setStatusCode(200);
         response.end(message);
