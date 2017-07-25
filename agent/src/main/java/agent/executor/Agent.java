@@ -1,4 +1,4 @@
-package agent;
+package agent.executor;
 
 import common.model.Message;
 
@@ -8,6 +8,5 @@ import common.model.Message;
 public interface Agent {
 
     public void receive(Message message);
-
-    public void send();
+    public Message getRespone();
 }

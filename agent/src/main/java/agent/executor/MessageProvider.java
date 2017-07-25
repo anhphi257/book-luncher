@@ -1,4 +1,4 @@
-package brain.executor;
+package agent.executor;
 
 import common.model.Conversation;
 import common.model.Message;

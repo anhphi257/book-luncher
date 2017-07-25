@@ -1,5 +1,7 @@
 package agent.io.handler;
 
+import agent.executor.Agent;
+import agent.executor.imp.BotAgent;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import common.model.Message;
@@ -44,12 +46,16 @@ public class WebHookHandler implements Handler<RoutingContext> {
                         .getAsJsonObject().get("timestamp")
                         .getAsLong();
 
+
                 UserDAO userDAO = null;
                 try {
                     //TODO: implement your code here, send message to agent, get message from agent.
                     userDAO = new UserDAO();
                     User user = userDAO.getUserByFbId(fbId);
                     Message message = new Message(timestamp, user, content);
+                    Agent agent = new BotAgent();
+                    agent.receive(message);
+
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
