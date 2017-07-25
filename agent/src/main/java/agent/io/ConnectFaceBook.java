@@ -1,14 +1,11 @@
 package agent.io;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
-import io.vertx.core.http.HttpClient;
-import io.vertx.core.http.HttpClientRequest;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.ext.web.Router;
@@ -49,10 +46,9 @@ public class ConnectFaceBook extends AbstractVerticle {
     public void start() {
         Router router = Router.router(vertx);
 
+        router.get("/").handler(this::getHome);
         router.get("/webhook").handler(this::getWebHook);
         router.post("/webhook").handler(this::postWebHook);
-        router.post("/test").handler(this::testHandler);
-        router.get("/").handler(this::getHome);
 
         vertx.createHttpServer();
         vertx.createHttpServer().requestHandler(router::accept).listen(9199);
@@ -66,9 +62,10 @@ public class ConnectFaceBook extends AbstractVerticle {
     }
 
     public void getHome(RoutingContext routingContext) {
+        System.out.println("RUNNNIINNNGGGG");
         HttpServerRequest request = routingContext.request();
         HttpServerResponse response = routingContext.response();
-        response.putHeader("conten-type", "application/json; charset=UTF-8");
+        response.putHeader("content-type", "application/text; charset=UTF-8");
         response.putHeader("Access-Control-Allow-Origin", "*");
         response.setStatusCode(200);
         response.end("Server run ok");
@@ -83,14 +80,14 @@ public class ConnectFaceBook extends AbstractVerticle {
         String challenge = request.getParam("hub.challenge");
         if (mode.equals("subscribe") && key.equals(VERIFY_KEY)) {
             System.out.println("Verify success");
-            response.putHeader("conten-type", "application/json; charset=UTF-8");
+            response.putHeader("content-type", "application/json; charset=UTF-8");
             response.putHeader("Access-Control-Allow-Origin", "*");
             response.setStatusCode(200);
             response.end(challenge);
 
         } else {
             System.out.println("Error verify");
-            response.putHeader("conten-type", "application/json; charset=UTF-8");
+            response.putHeader("content-type", "application/json; charset=UTF-8");
             response.putHeader("Access-Control-Allow-Origin", "*");
             response.setStatusCode(403);
             response.end();
@@ -125,7 +122,7 @@ public class ConnectFaceBook extends AbstractVerticle {
 
 
         });
-        response.putHeader("conten-type", "application/json; charset=UTF-8");
+        response.putHeader("content-type", "application/json; charset=UTF-8");
         response.putHeader("Access-Control-Allow-Origin", "*");
         response.setStatusCode(200);
         response.end("OK");
@@ -168,7 +165,7 @@ public class ConnectFaceBook extends AbstractVerticle {
         routingContext.request().bodyHandler(buffer -> {
             String body = buffer.toString();
             System.out.println("Test Handler: " + body);
-            response.putHeader("conten-type", "application/x-www-form-urlencoded; charset=UTF-8");
+            response.putHeader("content-type", "application/x-www-form-urlencoded; charset=UTF-8");
             response.putHeader("Access-Control-Allow-Origin", "*");
             response.setStatusCode(200);
             response.end("OK");
